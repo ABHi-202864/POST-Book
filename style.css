@@ -27,3 +27,38 @@ body {
     color: #202124;
     margin-bottom: 2.5rem;
 }
+
+.currency-converter .input-container {
+    border: 2px solid #bbbbdb;
+    border-radius: 4px;
+    margin-block: 20px;
+}
+
+.currency-converter .input-container:focus-within {
+    border-color: #0056b3;
+}
+
+.currency-converter .input-container input,
+.currency-converter .input-container select {
+    width: 9.375rem;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.currency-converter .arrow {
+    transform: rotate(90deg);
+    font-size: 32px;
+}
+
+.currency-converter .result{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+
+/* Responsive */
+
