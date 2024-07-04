@@ -63,6 +63,11 @@ body {
 /* Responsive */
 
 @media only screen and (max-width: 320px) {
+
+    .currency-converter h1 {
+        margin-bottom: 1.5rem;
+    }
+
     .currency-converter {
         width: 80%;
         margin: 0 auto;
@@ -72,8 +77,13 @@ body {
         font-size: 25px;
     }
 
+    .currency-converter .arrow {
+        font-size: 26px;
+    }
+
     .currency-converter .input-container {
         border: none;
+        margin-block: 10px;
     }
 
     .currency-converter .input-container input,
@@ -81,5 +91,10 @@ body {
         border: 1px solid #ccc;
         margin-block: 4px;
         width: 100%;
+        font-size: 16px;
+    }
+
+    .currency-converter .result{
+        margin: 0;
     }
 }
