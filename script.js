@@ -49,9 +49,6 @@ const countries = [
     { code: "JPY", name: "Japanese Yen" },
     { code: "AED", name: "United Arab Emirates Dirham" },
     { code: "ARS", name: "Argentine Peso" }
-
-
-
 ];
 
 countries.forEach((country) => {
@@ -63,4 +60,23 @@ countries.forEach((country) => {
 
     fromCurrencyElement.appendChild(option1);
     toCurrencyElement.appendChild(option2);
+
+    fromCurrencyElement.value = "USD";
+    toCurrencyElement.value = "INR";
 });
+
+const getExchangeRate = async () => {
+    const amount = parseFloat(fromCurrencyElement.value);
+    const fromCurrency = fromCurrencyElement.value;
+    const toCurrency = toCurrencyElement.value;
+
+    const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`);
+    const data = await response.json();
+
+    const conversionRate = data.rates[toCurrency];
+    const convertedAmount = (amount * conversionRate);
+
+    convertedAmountElemrnt.value = convertedAmount;
+}
+
+formAmountElemrnt.addEventListener("input", getExchangeRate);
