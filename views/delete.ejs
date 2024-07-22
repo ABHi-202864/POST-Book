@@ -10,7 +10,11 @@
 <body>
 
     <h3>To Delete this user : <%= user.email%>, enter the password</h3>
-    
+
+    <form method="post" action="/user/<%= user.id%>?_method=DELETE">
+        <input placeholder="enter password to delete" name="password" />
+        <button>Delete</button>
+    </form>
 
 </body>
 
