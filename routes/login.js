@@ -7,17 +7,24 @@ const credential = {
 }
 
 // login user
-router.post("/login", (req, res) => {
+router.post("/", (req, res) => {
     if (req.body.email === credential.email && req.body.password === credential.password) {
         req.session.user = req.body.email;
-        // res.redirect("/dashbord");
-        res.end("Login Successful");
+        res.render("dashboard");
+        // res.end("Login Successful");
     } else {
         res.end("Invalide Username");
     }
 });
 
-
+// router for dashbord
+router.get("/dashboard", (req, res) => {
+    if (req.session.user) {
+        res.render("dashboard", { user: req.session.user });
+    } else {
+        res.send("Unauthorize User");
+    }
+});
 
 
 module.exports = router;
