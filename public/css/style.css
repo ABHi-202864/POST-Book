@@ -1,39 +1,44 @@
 body {
-    font-family: "Open Sans", sans-serif;
-    background-color: #F2F4F7;
+    background-color: #f8f9fa;
 }
 
-
-
-/* login page */
-
-.center-div {
-    padding-top: 10%;
+.card-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.login-div {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+.card {
+
+
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
-.btn {
-    background-color: #0861F2 !important;
-    font-size: 20px;
-    font-weight: 600;
-    color: #eeeeee;
-    transition: 0.2s ease-in-out;
+.form-control:focus {
+    box-shadow: none;
+    border-color: #6c757d;
 }
 
-.btn:hover {
-    opacity: .9;
+.btn-primary {
+    background-color: #000;
+    border-color: #000;
 }
 
+.btn-primary:hover {
+    background-color: #333;
+    border-color: #333;
+}
 
 /* for login password visibility*/
 .password-toggle {
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 30px;
+    top: 69%;
+    transform: translateY(-58%);
     cursor: pointer;
 }

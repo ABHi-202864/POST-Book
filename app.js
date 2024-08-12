@@ -6,7 +6,7 @@ const bodyparser = require("body-parser");
 const session = require("express-session");
 const { v4: uuidv4 } = require('uuid');
 // Express Routes <- require
-const login = require("./routes/login");
+const login = require("./routes/user");
 
 
 app.set("view engine", "ejs");
@@ -28,12 +28,12 @@ app.use(session(sessionOptions));
 
 
 // Express Router
-app.use("/login", login);
+app.use("/user", login);
 
 
 // Home route
 app.get("/", (req, res) => {
-    res.render("index", { title: "PostBook" });
+    res.render("signup", { title: "PostBook" });
 });
 
 
