@@ -39,3 +39,4 @@ const uplode = multer({ storage });
 
 
 // MONGOOSE SETUP
+const PORT = process.env.PORT || 6001;
