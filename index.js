@@ -5,10 +5,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import multer from "multer";
 import helmet from "helmet";
-import mongoose from "mongoose";
 import path from "path";
 import { fileURLToPath } from "url";
 import morgan from "morgan";
+import { register } from "./controllers/auth.js";
 
 
 // CONFIGURATIONS
@@ -38,5 +38,14 @@ const storage = multer.diskStorage({
 const uplode = multer({ storage });
 
 
+// ROUTS WITH FILES
+app.post("/auth/register", uplode.single("picture"), register);
+
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
+mongoose.connect(process.env.MONGO_URL, {
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+}).then(() => {
+    app.listen(PORT, () => console.log(`SERVER DOKING = ${PORT}`));
+}).catch((err) => console.log(`${err} + DID NOT CONNECT`));
