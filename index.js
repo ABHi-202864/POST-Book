@@ -9,8 +9,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.js";
-import usersRoutes from "./routes/users.js";
+import userRoutes from "./routes/users.js";
+import postRoutes from "./routes/posts.js"
 import { register } from "./controllers/auth.js";
+import { createPost } from "./controllers/posts.js";
+import { verifyToken } from "./middleware/auth.js";
+
 
 
 // CONFIGURATIONS
@@ -42,10 +46,12 @@ const uplode = multer({ storage });
 
 // ROUTS WITH FILES
 app.post("/auth/register", uplode.single("picture"), register);
+app.post("/posts", verifyToken, uplode.single("picture"), createPost);
 
 // ROUTES 
 app.use("/auth", authRoutes);
-app.use("/users", usersRoutes);
+app.use("/users", userRoutes);
+app.use("/posts", postRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
