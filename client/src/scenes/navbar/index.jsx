@@ -6,7 +6,7 @@ import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 
-export default Navbar = () => {
+const Navbar = () => {
     const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
     const dispatch = useDispatch();
     const navigave = useNavigate();
@@ -20,10 +20,11 @@ export default Navbar = () => {
     const primaryLight = theme.palette.primary.light;
     const alt = theme.palette.background.alt;
 
-    const fullName = `${user.firstName} ${user.lastName}`;
+    // const fullName = `${user.firstName} ${user.lastName}`;
+    const fullName = user ? `${user.firstName} ${user.lastName}` : 'Guest';
 
     return (
-        <FlexBetween padding="1rem 6%" backgroundCollor={alt}>
+        <FlexBetween padding="1rem 6%" backgroundColor={alt}>
             <FlexBetween gap="1.75rem">
                 <Typography
                     fontWeight="bold"
@@ -41,7 +42,7 @@ export default Navbar = () => {
                 </Typography>
                 {isNonMobileScreens && (
                     <FlexBetween
-                        backgroundCollor={neutralLight}
+                        backgroundColor={neutralLight}
                         borderRadius="9px"
                         gap="3rem"
                         padding="0.1rem 1.5rem"
@@ -104,7 +105,7 @@ export default Navbar = () => {
                     zIndex="10"
                     maxWidth="500px"
                     minWidth="300px"
-                    backgroundCollor={background}
+                    backgroundColor={background}
                 >
                     {/* CLOSE ICON */}
                     <Box display="flex" justifyContent="flex-end" p="1rem" >
@@ -158,3 +159,5 @@ export default Navbar = () => {
         </FlexBetween>
     )
 }
+
+export default Navbar;
