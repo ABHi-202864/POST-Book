@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const Awards = () => {
   return (
@@ -39,7 +39,7 @@ const Awards = () => {
             </div>
           </div>
 
-          <img src="assets/pressLogos.png" style={{width: "90%", marginTop: "2rem"}}/>
+          <img src="assets/pressLogos.png" style={{ width: "90%", marginTop: "2rem" }} />
         </div>
       </div>
     </div>
