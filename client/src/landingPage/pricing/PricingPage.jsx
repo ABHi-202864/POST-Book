@@ -3,7 +3,7 @@
 import Hero from "./Hero";
 import Brokerage from "./Brokerage";
 
-const Brokerage = () => {
+const PricingPage = () => {
   return (
     <>
       <Hero />
@@ -12,4 +12,4 @@ const Brokerage = () => {
   )
 }
 
-export default Brokerage;
+export default PricingPage;
