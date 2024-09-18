@@ -1,8 +1,8 @@
 
 
 const LeftSection = () => {
-  return(
-    <H1>Left S</H1>
+  return (
+    <h1>Left S</h1>
   )
 }
 

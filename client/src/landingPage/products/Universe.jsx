@@ -2,7 +2,7 @@
 
 const Universe = () => {
   return (
-    <H1>Universe</H1>
+    <h1>Universe</h1>
   )
 }
 
