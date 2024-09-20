@@ -12,7 +12,7 @@ const Footer = () => {
           </div>
           <div className="col">
             <p>Company</p>
-            <a href="" style={{ color: "#666", textDecoration: "none", fontSize: "1rem", fontWeight: "500", lineHeight: "2rem" }}>About</a> <br />
+            <a href="" style={{ color: "#666", textDecoration: "none", fontSize: "1rem", fontWeight: "500", lineHeight: "2" }}>About</a> <br />
             <a href="" style={{ color: "#666", textDecoration: "none", fontSize: "1rem", fontWeight: "500", lineHeight: "2" }}>Products</a> <br />
             <a href="" style={{ color: "#666", textDecoration: "none", fontSize: "1rem", fontWeight: "500", lineHeight: "2" }}>Pricing</a> <br />
             <a href="" style={{ color: "#666", textDecoration: "none", fontSize: "1rem", fontWeight: "500", lineHeight: "2" }}>Referral programme</a> <br />
