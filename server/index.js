@@ -5,8 +5,10 @@ if (process.env.NODE_ENV != "production") {
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const bodyParsar = require("body-parser");
+const cors = require("cors");
 
-// const HoldingsModel = require("./model/HoldingsModel");
+const HoldingsModel = require("./model/HoldingsModel");
 const PositionsModel = require("./model/PositionsModel");
 
 
@@ -14,9 +16,9 @@ const PORT = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
 
 
-app.get("/", (req, res) => {
-  res.send("Hello i'm ABHI");
-});
+app.use(cors());
+app.use(bodyParsar.json());
+
 
 // INIT DATA
 // app.get("/addHoldings", async (req, res) => {
@@ -189,6 +191,16 @@ app.get("/", (req, res) => {
 
 //   res.send("done!");
 // });
+
+app.get("/allHoldings", async (req, res) => {
+  let allHoldings = await HoldingsModel.find({});
+  res.json(allHoldings);
+});
+
+app.get("/allPositions", async (req, res) => {
+  let allPositions = await PositionsModel.find({});
+  res.json(allPositions);
+});
 
 app.listen(PORT, () => {
   console.log("Doking on port = 3002");
