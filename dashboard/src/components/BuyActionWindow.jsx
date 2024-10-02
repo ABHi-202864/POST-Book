@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
-
 
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
@@ -19,12 +18,11 @@ const BuyActionWindow = ({ uid }) => {
     });
 
     GeneralContext.closeBuyWindow();
-  }
+  };
 
   const handleCancelClick = () => {
     GeneralContext.closeBuyWindow();
-  }
-
+  };
 
   return (
     <div className="container" id="buy-window" draggable="true">
@@ -60,13 +58,13 @@ const BuyActionWindow = ({ uid }) => {
           <Link className="btn btn-blue" onClick={handleBuyClick}>
             Buy
           </Link>
-          <Link className="btn btn-grey" onClick={handleCancelClick}>
-            Buy
+          <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
+            Cancel
           </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default BuyActionWindow;
