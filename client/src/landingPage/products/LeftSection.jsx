@@ -1,4 +1,4 @@
-
+import React from "react";
 
 const LeftSection = ({ imageUrl, productTitel, productDes, tryDemo, learnMore, googlePlay, appStore }) => {
   return (

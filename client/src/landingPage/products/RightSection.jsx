@@ -1,4 +1,4 @@
-
+import React from "react";
 
 const RightSection = ({ imageUrl, title, des, learnMore }) => {
   return (
